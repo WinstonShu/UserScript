@@ -19,7 +19,11 @@
     if (location.href !== previousUrl) {
       previousUrl = location.href;
 
-      if (location.href.includes("/supplement/") || location.href.includes("/gradedLti") || location.href.includes("/ungradedLti")) {
+      if (
+        location.href.includes("/supplement/") ||
+        location.href.includes("/gradedLti") ||
+        location.href.includes("/ungradedLti")
+      ) {
         root.style.fontSize = "23px";
       } else {
         injectSpaceKey();
@@ -36,9 +40,7 @@
         let media = document.querySelector("video");
 
         if (key.code == "Space") {
-          
           media.paused || media.currentTime == 0 ? media.play() : media.pause();
-          
         } else if (key.code == "ArrowLeft") {
           media.currentTime >= 5
             ? (media.currentTime -= 5)
