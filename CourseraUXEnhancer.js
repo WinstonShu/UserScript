@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CourseraUXEnhancer
 // @namespace    http://tampermonkey.net/
-// @version      0.2
+// @version      0.3
 // @description  Make Coursera better! Enlarge reading material font size; enforce Space key & ArrowLeft key & ArrowRight key work properly when playing video.
 // @author       Winston Shu
 // @match        *://*.coursera.org/learn/*
@@ -22,7 +22,8 @@
       if (
         location.href.includes("/supplement/") ||
         location.href.includes("/gradedLti") ||
-        location.href.includes("/ungradedLti")
+        location.href.includes("/ungradedLti") ||
+        location.href.includes("/discussionPrompt")
       ) {
         root.style.fontSize = "23px";
       } else {
